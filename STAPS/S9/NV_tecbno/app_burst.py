@@ -80,8 +80,9 @@ acc_thr = sb.number_input("Seuil accélération (m/s²)", value=2.5, step=0.5, h
 min_dur = sb.number_input("Durée mini d'un événement (s)", value=0.5, step=0.1, min_value=0.0)
 
 sb.header("Mécanique (ASP / bursts)")
-asp_source = sb.radio("ASP calculée sur", ["Session complète", "Fenêtre d'analyse"],
-                      help="L'article recommande ≥ 45 min de données et vmax ≥ 80 % de v0.")
+asp_source = sb.radio("ASP calculée sur", ["Fenêtre d'analyse", "Session complète"],
+                      help="L'article recommande ≥ 45 min de données et vmax ≥ 80 % de v0. "
+                           "Sur la session complète l'échauffement tire a0 vers le haut et le seuil 80 % devient sévère.")
 asp_vmin = sb.number_input("Vitesse mini pour l'ASP (m/s)", value=3.0, step=0.5, min_value=0.0)
 ep_frac = sb.slider("Seuil EPthr (fraction de EP_ASP)", 0.5, 1.0, 0.8, 0.05,
                     help="80 % dans l'article (Margaria 1971).")
